@@ -1,0 +1,1 @@
+'numero[3] ["pari"] ["dispari] numero print 2 % 0 = if print 'resto[numero 2 %] resto print 'quadrato[dup *] 4 quadrato print 'rettangolo[*] 2 3 rettangolo print
