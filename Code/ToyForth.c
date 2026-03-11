@@ -474,6 +474,11 @@ tfObj *parseList(tfContext *context, tfParser *parser)
             printf("List Error!\n");
             return NULL;
         } 
+
+        if (balance == 0)
+        {
+            break;
+        }
         if (balance > 0)
         {
             increment_parser(parser);
@@ -498,7 +503,7 @@ tfObj *parseProgram(tfContext *context, tfParser *parser)
     increment_parser(parser);
     char *start = parser->current_token;
     char *end;
-    tfObj *list;
+    tfObj *list = NULL;
     
     while(isSymbol(parser->current_token[0])) 
     {
@@ -511,12 +516,15 @@ tfObj *parseProgram(tfContext *context, tfParser *parser)
     {
         list = parseList(context, parser);
     }
-
+    if (list == NULL)
+    {
+        printf("List not Found!\n");
+        return NULL;
+    }
     int len = end - start;
 
     tfObj *symbol = createObjectSymbol(start, len);
     addUSymbol(context, symbol, list);
-    increment_parser(parser);
     return symbol;
 }
 
@@ -579,7 +587,7 @@ FunctionTableRow *searchSymbol(tfContext *context, tfObj *o)
         }
     }    
     return NULL;    
-    printf("Function %s not found\n", o->str.ptr);
+    //printf("Function %s not found\n", o->str.ptr);
 }
 
 int exec(tfContext *context, tfObj *program);
@@ -701,6 +709,7 @@ tfObj *compile(tfContext *context, char *program_txt)
         if(parser.current_token[0] == '\'')
         {
             parseProgram(context, &parser);
+            continue;
         }
 
         if(isDigitSigned(parser.current_token[0], parser.current_token[1]))
@@ -780,7 +789,7 @@ tfContext *createContext()
 int main(int argc, char **argv)
 {
     printf("-------------------------INIZIO PROGRAMMA----------------------------\n");
-    argv[1] = "testgemini.txt";
+    argv[1] = "RICORSIVO_FATTORIALE.txt";
     argc++;
 
     if(argc < 2)

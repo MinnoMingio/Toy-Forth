@@ -1,1 +1,0 @@
-'fact[dup 1 = ["finito" print] [dup 1 - fact * print] if] 8 fact 'quadrato[dup *] "quadrato" print 15 quadrato print 'rettangolo[*] "rettangolo" print 5 7 rettangolo print
