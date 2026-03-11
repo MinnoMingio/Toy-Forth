@@ -12,7 +12,7 @@ L'obiettivo di questo progetto è imparare come funziona un interprete, concentr
 ## Esempio di Codice
 Ecco come appare un programma nel mio linguaggio:
 
-file testo per calcolare il fattoriale, in maniera ricorsiva, del numero 12:
+file testo per calcolare il fattoriale, in maniera ricorsiva, del numero 12:                                                                          
 'num[12] 'fact[dup 1 = ["finito" print] [dup 1 - fact * print] if] num fact
 
 output:
