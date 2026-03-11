@@ -16,7 +16,7 @@ file testo:
 'num[12] 'fact[dup 1 = ["finito" print] [dup 1 - fact * print] if] num fact
 
 output:
--------------------------INIZIO PROGRAMMA----------------------------
+-------------------------INIZIO PROGRAMMA----------------------------                                                                                 
 list: 1 = [int: 12] -> Compiled
 list: 2 = [str: finito, sym: print] -> Compiled
 list: 6 = [sym: dup, int: 1, sym: -, sym: fact, sym: *, sym: print] -> Compiled
