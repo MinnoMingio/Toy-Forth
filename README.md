@@ -2,6 +2,10 @@ Ciao! Sono un ragazzo di 17 anni e questo è il mio progetto didattico scritto i
 
 L'obiettivo di questo progetto è imparare come funziona un interprete, concentrandomi sulla gestione della memoria e sulla logica degli stack.
 
+ATTENZIONE:
+Non ho seguito esattamente le implementazioni di Salvatore Sanfilippo in certi punti.
+Nel main ho hardcodato l'argv[0] per essere uguale al file .txt che voglio io in quanto sono su windows.
+
 ## Caratteristiche principali
 - **Linguaggio a Stack:** Ispirato a Forth, i dati vengono manipolati su uno stack centrale.
 - **Reference Counting:** Gestione manuale della memoria con `retain` e `release` per prevenire memory leak.
