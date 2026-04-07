@@ -745,13 +745,10 @@ tfObj *compile(tfContext *context, char *program_txt)
             memcpy(error_message, saved_token, error_message_length);
             error_message[error_message_length] = 0;
             printf("Compile Error at col %d[%c] = ...%s...\n", parser.col, error_char, error_message);
+            
             return NULL;
         }else
         {
-            if(o->type == TFOBJ_TYPE_SYMBOL && strcmp(o->str.ptr, "if")==0)
-            {
-
-            }
             pushToList(parsed_obj, o);
         } 
     }
